@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace LiveTddTotalAmount
@@ -30,13 +31,9 @@ namespace LiveTddTotalAmount
                     return 0;
                 }
 
-                var effectiveEndDate = period.EndDate < budgets[0].LastDay
-                    ? period.EndDate
-                    : budgets[0].LastDay;
+                var effectiveEndDate = period.EffectiveEndDate(budgets);
 
-                var effectiveStartDate = period.StartDate > budgets[0].FirstDay
-                    ? period.StartDate
-                    : budgets[0].FirstDay;
+                var effectiveStartDate = period.EffectiveStartDate(budgets);
 
                 return (effectiveEndDate - effectiveStartDate).Days + 1;
             }
