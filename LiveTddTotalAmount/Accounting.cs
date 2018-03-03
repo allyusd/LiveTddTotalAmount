@@ -17,6 +17,11 @@ namespace LiveTddTotalAmount
         {
             var period = new Period(startDate, endDate);
 
+            if (period.EndDate < period.StartDate)
+            {
+                throw new ArgumentException();
+            }
+
             var budgets = _repository.GetAll();
 
             if (budgets.Any())
