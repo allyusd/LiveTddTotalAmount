@@ -32,11 +32,7 @@ namespace LiveTddTotalAmount
                 }
 
 
-                var effectiveDays = period.EffectiveDays(budgets);
-
-                var dailyAmount = budgets[0].DailyAmount();
-
-                return dailyAmount * effectiveDays;
+                return budgets[0].TotalAmount(period);
             }
 
             return 0;

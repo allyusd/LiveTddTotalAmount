@@ -25,5 +25,15 @@ namespace LiveTddTotalAmount
             var dailyAmount = Amount / TotalDay;
             return dailyAmount;
         }
+
+        public int TotalAmount(Period period)
+        {
+            var effectiveDays = period.EffectiveDays(this);
+
+            var dailyAmount = DailyAmount();
+
+            var totalAmount = dailyAmount * effectiveDays;
+            return totalAmount;
+        }
     }
 }
