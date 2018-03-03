@@ -31,7 +31,7 @@ namespace LiveTddTotalAmount
         private void TotalAmountShouldBe(DateTime startDate, DateTime endDate, int excepted)
         {
             var amount = _accounting.TotalAmount(startDate, endDate);
-            Assert.Equals(excepted, amount);
+            Assert.AreEqual(excepted, amount);
         }
 
         private void GivenBudgets(params Budget[] bugets)
