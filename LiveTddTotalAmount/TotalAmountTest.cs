@@ -97,6 +97,17 @@ namespace LiveTddTotalAmount
                 new DateTime(2018, 5, 1),
                 1);
         }
+        [TestMethod]
+        public void daily_amout()
+        {
+            GivenBudgets(
+                new Budget() { YearMonth = "201804", Amount = 300 }
+            );
+            TotalAmountShouldBe(
+                new DateTime(2018, 4, 1),
+                new DateTime(2018, 4, 2),
+                20);
+        }
 
 
 
