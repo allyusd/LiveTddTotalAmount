@@ -51,7 +51,7 @@ namespace LiveTddTotalAmount
 
         public decimal TotalAmount(DateTime startDate, DateTime endDate)
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
 
