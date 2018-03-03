@@ -19,23 +19,7 @@ namespace LiveTddTotalAmount
 
             var budgets = _repository.GetAll();
 
-            if (budgets.Any())
-            {
-                if (endDate < budgets[0].FirstDay)
-                {
-                    return 0;
-                }
-
-                if (startDate > budgets[0].LastDay)
-                {
-                    return 0;
-                }
-
-
-                return budgets[0].TotalAmount(period);
-            }
-
-            return 0;
+            return budgets.Sum(w => w.TotalAmount(period));
         }
     }
 }
