@@ -63,6 +63,17 @@ namespace LiveTddTotalAmount
                 0);
         }
 
+        [TestMethod]
+        public void one_effecttive_day_period_overlap_budget_month_firstday()
+        {
+            GivenBudgets(
+                new Budget() { YearMonth = "201804", Amount = 30 }
+            );
+            TotalAmountShouldBe(
+                new DateTime(2018, 3, 31),
+                new DateTime(2018, 4, 1),
+                1);
+        }
 
         private void TotalAmountShouldBe(DateTime startDate, DateTime endDate, int excepted)
         {
