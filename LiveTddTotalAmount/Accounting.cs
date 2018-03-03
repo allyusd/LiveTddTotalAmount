@@ -16,10 +16,7 @@ namespace LiveTddTotalAmount
         public decimal TotalAmount(DateTime startDate, DateTime endDate)
         {
             var period = new Period(startDate, endDate);
-
-            var budgets = _repository.GetAll();
-
-            return budgets.Sum(w => w.TotalAmount(period));
+            return _repository.GetAll().Sum(w => w.TotalAmount(period));
         }
     }
 }
