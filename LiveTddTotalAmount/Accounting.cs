@@ -30,7 +30,12 @@ namespace LiveTddTotalAmount
                     return 0;
                 }
 
-                return (period.EndDate - period.StartDate).Days + 1;
+                var effectiveEndDate = period.EndDate;
+                var effectiveStartDate = period.StartDate > budgets[0].FirstDay
+                    ? period.StartDate
+                    : budgets[0].FirstDay;
+
+                return (effectiveEndDate - effectiveStartDate).Days + 1;
             }
 
             return 0;
