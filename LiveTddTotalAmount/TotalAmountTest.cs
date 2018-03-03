@@ -87,6 +87,18 @@ namespace LiveTddTotalAmount
                 1);
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void invalid_period()
+        {
+            GivenBudgets();
+            TotalAmountShouldBe(
+                new DateTime(2018, 6, 30),
+                new DateTime(2018, 5, 1),
+                1);
+        }
+
+
 
         private void TotalAmountShouldBe(DateTime startDate, DateTime endDate, int excepted)
         {
