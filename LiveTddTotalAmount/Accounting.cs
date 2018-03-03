@@ -25,6 +25,11 @@ namespace LiveTddTotalAmount
                     return 0;
                 }
 
+                if (startDate > budgets[0].LastDay)
+                {
+                    return 0;
+                }
+
                 return (period.EndDate - period.StartDate).Days + 1;
             }
 
