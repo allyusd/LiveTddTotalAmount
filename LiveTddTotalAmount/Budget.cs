@@ -19,5 +19,11 @@ namespace LiveTddTotalAmount
         public int TotalDay {
             get { return DateTime.DaysInMonth(FirstDay.Year, FirstDay.Month); }
         }
+
+        public int DailyAmount()
+        {
+            var dailyAmount = Amount / TotalDay;
+            return dailyAmount;
+        }
     }
 }

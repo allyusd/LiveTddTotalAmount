@@ -32,12 +32,10 @@ namespace LiveTddTotalAmount
                 }
 
 
-                var effectiveEndDate = period.EffectiveEndDate(budgets);
-                var effectiveStartDate = period.EffectiveStartDate(budgets);
+                var effectiveDays = period.EffectiveDays(budgets);
 
-                var dailyAmount = budgets[0].Amount / budgets[0].TotalDay;
+                var dailyAmount = budgets[0].DailyAmount();
 
-                var effectiveDays = (effectiveEndDate - effectiveStartDate).Days + 1;
                 return dailyAmount * effectiveDays;
             }
 

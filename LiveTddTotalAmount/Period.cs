@@ -34,5 +34,13 @@ namespace LiveTddTotalAmount
                 : budgets[0].LastDay;
             return effectiveEndDate;
         }
+
+        public int EffectiveDays(List<Budget> budgets)
+        {
+            var effectiveEndDate = EffectiveEndDate(budgets);
+            var effectiveStartDate = EffectiveStartDate(budgets);
+            var effectiveDays = (effectiveEndDate - effectiveStartDate).Days + 1;
+            return effectiveDays;
+        }
     }
 }
