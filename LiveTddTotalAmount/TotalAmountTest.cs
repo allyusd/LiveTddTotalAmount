@@ -51,6 +51,18 @@ namespace LiveTddTotalAmount
                 0);
         }
 
+        [TestMethod]
+        public void no_effecttive_day_period_after_budget_month()
+        {
+            GivenBudgets(
+                new Budget() { YearMonth = "201804", Amount = 30 }
+            );
+            TotalAmountShouldBe(
+                new DateTime(2018, 5, 1),
+                new DateTime(2018, 5, 1),
+                0);
+        }
+
 
         private void TotalAmountShouldBe(DateTime startDate, DateTime endDate, int excepted)
         {
